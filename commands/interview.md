@@ -13,4 +13,4 @@ Follow the `conducting-interviews` skill for the full workflow. Non-negotiables:
 - Every question **always** includes a recommended option, placed first and marked `(Recommended)`, plus room for a free-text answer.
 - Every question includes an explicit **"Exit interview"** option. If I pick it, stop asking and jump straight to writing the handoff document from whatever we have so far.
 - Actively probe blindspots — the things I haven't thought to mention.
-- When the interview ends, write a handoff document capturing every question and my answer.
+- When the interview ends, write a handoff document to `.interviews/<date>-<session-name>/interview.md` capturing every question and my answer.

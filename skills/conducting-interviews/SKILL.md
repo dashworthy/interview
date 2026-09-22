@@ -75,7 +75,7 @@ Name the blindspot when you probe it: "You haven't mentioned failure modes — h
 
 ## The handoff document
 
-Write a Markdown file in the working directory named `interview-<slug>-<YYYY-MM-DD>.md` (slug from the topic). Honor a request for a shareable Claude Doc instead.
+Write the handoff to **`.interviews/<YYYY-MM-DD>-<session-name>/interview.md`** — one folder per interview, where `<session-name>` is a short kebab-case slug of the topic (e.g. `.interviews/2026-09-22-saas-pricing-model/interview.md`). Create the folder if it doesn't exist. One folder per interview keeps a session's artifacts together and gives resume a stable file to update. Honor a request for a shareable Claude Doc instead.
 
 ```markdown
 # Interview: <Topic>
@@ -105,6 +105,17 @@ The 3–5 concrete actions that follow.
 
 **Track every Q&A as you go** — don't reconstruct the transcript from memory at the end. After writing, tell the user the path and give a 2–3 line summary of what got decided.
 
+## Resuming an interview (open-thread mode)
+
+An interview rarely closes every question — the handoff's **Open threads** are the unfinished ones. Resuming picks them up without re-litigating what's settled. Enter this mode when the user asks to resume or continue an interview, points at a prior handoff, or runs the resume command.
+
+1. **Load the prior handoff.** Read the referenced interview's `.interviews/<date>-<session>/interview.md`; if none is named, use the most recently modified `.interviews/*/interview.md` (say which session you picked). Parse its **Open threads** (your targets) and **Decisions** (locked context).
+2. **Confirm the targets.** With several open threads, ask one structured question — multi-select, recommendation-marked — for which to tackle now ("all of them" recommended when they're small). With none, say so and offer to deepen a decided area or exit.
+3. **Interview the threads.** Apply the four laws exactly as before, but scope questions to the open threads. Treat every prior **Decision** as fixed — don't re-ask it, build on it. Still hunt blindspots *within* each thread.
+4. **Update the same handoff — never spawn a new one.** Edit that session's `interview.md` in place: move each resolved thread into **Decisions** (with the decision and why), append a **"Resumed &lt;date&gt;"** block under the transcript with the new Q&A, rewrite **Open threads** to only what remains (adding any newly surfaced), and refresh the **Summary**'s closing line and **Recommended next steps**. Keep the same folder — don't create a new one. Then tell the user the path and a 2–3 line note on what resolved and what still remains.
+
+The value of resuming is one document that accretes decisions across sessions — a fresh file throws that away.
+
 ## Red flags — stop if you catch yourself
 
 | Rationalization | Reality |
@@ -115,6 +126,8 @@ The 3–5 concrete actions that follow.
 | "They covered everything; I'll skip the blindspot sweep." | If they covered everything, the interview was worthless. Probe what they *didn't* say. |
 | "I'll write the transcript from memory at the end." | It'll be lossy. Capture each Q&A as it happens. |
 | "They said plain chat / no widgets, so I'll just ask normally." | Plain chat means text, not prose. Still a numbered menu, still recommendation-first, still an exit. |
+| "Resuming — I'll start a fresh handoff file." | Update the original. The point of resuming is one doc that accretes across sessions. |
+| "They're resuming, so I'll re-confirm the settled decisions first." | Decisions are locked context. Target the open threads; don't re-litigate what's done. |
 
 ## What this does NOT do
 

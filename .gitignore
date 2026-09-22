@@ -2,4 +2,4 @@
 evals/results/
 
 # Interview handoff docs (demo output)
-interview-*.md
+.interviews/

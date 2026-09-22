@@ -22,7 +22,9 @@ No topic? Just run `/interview` and it asks for one. You can also say "interview
 
 ## Output
 
-A Markdown file in your working directory: `interview-<topic>-<date>.md` with a summary, decisions, the full Q&A transcript, blindspots surfaced, open threads, and next steps.
+A Markdown file at `.interviews/<date>-<session-name>/interview.md` — one folder per interview — with a summary, decisions, the full Q&A transcript, blindspots surfaced, open threads, and next steps.
+
+**Resume:** `/interview-resume` picks up a prior interview's open threads without re-litigating settled decisions, and updates that same `interview.md` in place (no new file).
 
 ## Works in Claude Code and Codex
 
