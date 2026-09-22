@@ -1,0 +1,37 @@
+{
+  "name": "interview",
+  "version": "0.1.0",
+  "description": "Interviews you on any topic with structured, recommendation-first questions, hunts your blindspots, then writes a handoff document of every question and answer.",
+  "author": {
+    "name": "Andrew Leach",
+    "email": "andrew@leachcreative.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "interview",
+    "discovery",
+    "requirements",
+    "brainstorming",
+    "handoff",
+    "skills",
+    "codex"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Interview",
+    "shortDescription": "Structured, recommendation-first interviews that hunt blindspots and produce a handoff doc.",
+    "longDescription": "Name a topic and Interview questions you about it as structured multiple-choice / multi-select decisions, always proposing a recommendation first and always offering an exit. It deliberately probes the blindspots you didn't raise — scope, non-goals, users, success criteria, constraints, edge cases, assumptions, alternatives, and second-order effects — then writes a handoff document capturing every question, the options offered, and your answers. Delivery is tool-agnostic: it uses a structured-question tool when one is available and falls back to a plain-text numbered menu otherwise.",
+    "developerName": "Andrew Leach",
+    "category": "developer-tools",
+    "capabilities": [
+      "Interactive",
+      "Write",
+      "skills"
+    ],
+    "defaultPrompt": [
+      "Interview me about a subscription pricing model for my SaaS.",
+      "Help me pressure-test and flesh out a half-baked idea before I build it.",
+      "Interview me about the architecture for a new feature."
+    ]
+  }
+}

@@ -24,12 +24,17 @@ No topic? Just run `/interview` and it asks for one. You can also say "interview
 
 A Markdown file in your working directory: `interview-<topic>-<date>.md` with a summary, decisions, the full Q&A transcript, blindspots surfaced, open threads, and next steps.
 
-## Also works in Codex
+## Works in Claude Code and Codex
 
-Codex has no plugin system or question widget, so the same interview ships as a
-self-contained `/interview` custom prompt (plain-text menus, same four laws, same
-handoff). See [`codex/README.md`](codex/README.md) — one `cp` into
-`~/.codex/prompts/`.
+The plugin ships **two manifests over one shared `skills/` directory** — no
+duplicated logic:
+
+- `.claude-plugin/plugin.json` — Claude Code (plus the `/interview` command).
+- `.codex-plugin/plugin.json` — Codex (loads the same `skills/`).
+
+Same skill, same four laws, same handoff. Delivery is tool-agnostic: Claude Code
+prefers the `AskUserQuestion` tool; Codex (no question widget) uses the skill's
+plain-text numbered-menu fallback.
 
 ## Evals
 
@@ -43,10 +48,9 @@ with both objective (`tool_used`) and intent (`llm`) graders. All 8 cases pass.
 
 ```
 interview/
-├── .claude-plugin/plugin.json          # manifest
+├── .claude-plugin/plugin.json          # Claude Code manifest
+├── .codex-plugin/plugin.json           # Codex manifest (shares skills/)
 ├── commands/interview.md               # /interview entry point (Claude Code)
-├── skills/conducting-interviews/SKILL.md  # the interview workflow
-├── codex/                              # Codex CLI port (/interview prompt + AGENTS pointer)
-├── AGENTS.md                           # repo-scoped instructions for Codex-style agents
+├── skills/conducting-interviews/SKILL.md  # the interview workflow (shared)
 └── evals/                              # claude plugin eval suite (8 cases)
 ```
