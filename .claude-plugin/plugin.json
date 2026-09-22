@@ -1,0 +1,10 @@
+{
+  "name": "interview",
+  "version": "0.1.0",
+  "description": "Interviews you on any topic with structured, recommendation-first questions, hunts your blindspots, then writes a handoff document of every question and answer.",
+  "author": {
+    "name": "Andrew Leach",
+    "email": "andrew@leachcreative.com"
+  },
+  "keywords": ["interview", "discovery", "requirements", "brainstorming", "handoff"]
+}
