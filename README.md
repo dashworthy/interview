@@ -14,6 +14,13 @@ A Claude Code plugin that interviews you on any topic to turn a fuzzy idea into 
 - **Every question has an "Exit interview" option** — bail anytime and it writes up what you have.
 - Produces a **handoff document** capturing every question, the options offered, and your answers.
 
+## Install (Claude Code)
+
+```
+/plugin marketplace add dashworthy/interview
+/plugin install interview@interview
+```
+
 ## Use it
 
 ```
@@ -55,6 +62,7 @@ with both objective (`tool_used`) and intent (`llm`) graders. All 8 cases pass.
 ```
 interview/
 ├── .claude-plugin/plugin.json          # Claude Code manifest
+├── .claude-plugin/marketplace.json     # Claude Code marketplace (this repo)
 ├── .codex-plugin/plugin.json           # Codex manifest (shares skills/)
 ├── commands/interview.md               # /interview entry point (Claude Code)
 ├── skills/conducting-interviews/SKILL.md  # the interview workflow (shared)
