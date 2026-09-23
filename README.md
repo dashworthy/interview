@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="art/banner.svg" alt="interview — turns a fuzzy idea into a decided, documented one" width="100%">
+</p>
+
 # interview
 
 A Claude Code plugin that interviews you on any topic to turn a fuzzy idea into a decided, documented one.
